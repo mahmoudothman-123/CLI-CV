@@ -1,0 +1,20 @@
+{
+  "name": "cli-cv",
+  "version": "1.0.0",
+  "description": "CLI can make CV ,delete,save and read",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.14",
+    "ora": "^8.0.1",
+    "sqlite3": "^5.1.7"
+  }
+}
