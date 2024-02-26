@@ -33,25 +33,8 @@ const addYourCv = [
   },
 ];
 
-// programAddCv
-//   .name("job-form")
-//   .description("Save Data for information person and search")
-//   .version("0.0.1");
-
-// programAddCv
-//   .command("add-cv")
-//   .description("Simple Job Application Form")
-//   .action(() => {
-//     inquirer.prompt(addYourCv).then((answers) => {
-//       console.log(answers);
-//     });
-//   });
-
-// programAddCv.parse();
-
-// export default programAddCv;
-
 export default async function addCV() {
   const answers = await inquirer.prompt(addYourCv);
+  console.table(answers);
   return answers;
 }

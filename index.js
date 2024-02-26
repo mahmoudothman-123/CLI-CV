@@ -1,7 +1,9 @@
-import addCV from "./commands/addCV";
+import addCV from "./commands/addCV.js";
 
 import { Command } from "commander";
 const program = new Command();
+
+
 
 
 // Defining a command called 'add' 
@@ -16,3 +18,5 @@ program
 .description('Create a new CV.')
 .action(addCV)
 
+
+program.parse();
