@@ -14,22 +14,22 @@ const addYourCv = [
   {
     type: "input",
     message: "what is your current address ?",
-    name: "Current address",
+    name: "currentAddress",
   },
   {
     type: "input",
     message: "what is your Email Address ?",
-    name: "Email Address",
+    name: "email",
   },
   {
     type: "number",
     message: "what is your Phone Number ?",
-    name: "Phone Number",
+    name: "Phone",
   },
   {
     type: "input",
     message: "what is your current job ?",
-    name: "Current Job",
+    name: "job",
   },
 ];
 

@@ -1,10 +1,11 @@
 import addCV from "./commands/addCV.js";
-
+import openDb from './schema/schemaCv.js'
 import { Command } from "commander";
 const program = new Command();
 
 
-
+(async()=>{
+await openDb();
 
 // Defining a command called 'add' 
 program
@@ -20,3 +21,5 @@ program
 
 
 program.parse();
+
+})();
