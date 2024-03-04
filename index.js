@@ -5,7 +5,7 @@ const program = new Command();
 
 
 (async()=>{
-await openDb();
+await openDb;
 
 // Defining a command called 'add' 
 program
@@ -22,4 +22,4 @@ program
 
 program.parse();
 
-})();
+})(); 
