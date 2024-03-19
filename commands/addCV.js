@@ -1,4 +1,6 @@
 import inquirer from "inquirer";
+import { db } from "../schema/schemaCv.js";
+import Chalk from "chalk";
 
 const addYourCv = [
   {
@@ -33,8 +35,30 @@ const addYourCv = [
   },
 ];
 
-export default async function addCV() {
+export default async function addQuestion() {
+  console.log(Chalk.blue.bold("welcome"));
   const answers = await inquirer.prompt(addYourCv);
-  console.table(answers);
-  return answers;
+  const id = +1;
+  const fullName = answers.fullName;
+  const age = parseInt(answers.age);
+  const currentAddress = answers.currentAddress;
+  const email = answers.email;
+  const Phone = answers.Phone;
+  const job = answers.job;
+  console.log(Chalk.green.bold("Thank you for add us your CV"));
+
+  db.run(
+    "INSERT INTO cv (id,fullName,age,currentAddress,email,Phone,job) VALUES(?,?,?,?,?,?,?)",
+    [id, fullName, age, currentAddress, email, Phone, job],
+    function (err) {
+      if (err) {
+        console.log(err.message);
+      }
+      console.log(
+        Chalk.yellow.bold(
+          `Your cv details have been saved with ID ${id}`
+        )
+      );
+    }
+  );
 }
