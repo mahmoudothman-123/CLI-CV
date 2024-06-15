@@ -38,7 +38,6 @@ const addYourCv = [
 export default async function addQuestion() {
   console.log(Chalk.blue.bold("welcome"));
   const answers = await inquirer.prompt(addYourCv);
-  const id = +1;
   const fullName = answers.fullName;
   const age = parseInt(answers.age);
   const currentAddress = answers.currentAddress;
@@ -48,17 +47,16 @@ export default async function addQuestion() {
   console.log(Chalk.green.bold("Thank you for add us your CV"));
 
   db.run(
-    "INSERT INTO cv (id,fullName,age,currentAddress,email,Phone,job) VALUES(?,?,?,?,?,?,?)",
-    [id, fullName, age, currentAddress, email, Phone, job],
+    "INSERT INTO cv (fullName,age,currentAddress,email,Phone,job) VALUES(?,?,?,?,?,?)",
+    [fullName, age, currentAddress, email, Phone, job],
     function (err) {
       if (err) {
         console.log(err.message);
+      } else {
+        console.log(
+          Chalk.yellow.bold(`Inserted a row with the ID: ${this.lastID}`)
+        );
       }
-      console.log(
-        Chalk.yellow.bold(
-          `Your cv details have been saved with ID ${id}`
-        )
-      );
     }
   );
 }
