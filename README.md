@@ -2,7 +2,7 @@
 
 ### Description
 
-the project is CLI (Command line Interface) tool you can make CV , delete CV , save CV and read CV
+the project is CLI (Command line Interface) tool you can make CV , delete CV , save CV , read CV and list all cv
 
 ### Prerequisites
 
@@ -17,3 +17,20 @@ the project is CLI (Command line Interface) tool you can make CV , delete CV , s
 #### list what to install
 
 nodejs v21.2.0
+
+#### The usage  
+Usage: CV [options] [command]
+
+CLI can make CV ,delete,save,read,list and update
+
+Options:
+  -V, --version    output the version number
+  -h, --help       display help for command
+
+Commands:
+  add              Create a new CV.
+  list             list all cv
+  search           search for cv by id
+  delete           delete cv by id
+  update-fullName  Update your fullName
+  help [command]   display help for command
